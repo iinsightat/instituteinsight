@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Harvard University - InstituteInsight</title>
+<style>
+  body { font-family: Arial, sans-serif; background: #f7f9fc; margin: 0; color: #222;}
+  header { background: #004080; color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center;}
+  header .logo { font-weight: bold; font-size: 1.5em;}
+  nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold;}
+  nav a:hover { text-decoration: underline;}
+  main { max-width: 900px; margin: 38px auto; padding: 0 24px; background: white; box-shadow: 0 0 10px rgba(0,0,0,0.09); border-radius: 8px;}
+  h1 { color: #004080; margin-top: 0; padding-top: 20px;}
+  .profile-section { background: #e6f2ff; border-radius: 8px; padding: 20px; margin-bottom: 18px;}
+  .facts-table { width: 100%; border-collapse: collapse; margin: 10px 0 22px 0; background: #fafcff;}
+  .facts-table th, .facts-table td { border: 1px solid #c5d5e1; padding: 8px; text-align: left;}
+  .facts-table th { background: #e4f0fb;}
+  .facts-table td { background: #f0f5fa;}
+  .section-title { color: #004080; font-size: 1.15em; font-weight: bold; margin: 26px 0 13px;}
+  .info-list { padding-left: 20px;}
+  .info-list li { margin-bottom: 10px;}
+  .rank-table { width: 100%; border-collapse: collapse; margin-bottom: 14px; }
+  .rank-table th, .rank-table td { border: 1px solid #c5d5e1; padding: 8px; text-align: center;}
+  .rank-table th { background: #e4f0fb;}
+  .rank-table td { background: #f0f5fa;}
+  .acc-table { width: 100%; border-collapse: collapse; margin-bottom: 18px;}
+  .acc-table th, .acc-table td { border: 1px solid #c5d5e1; padding: 8px; text-align: left;}
+  .acc-table th { background: #e4f0fb;}
+  .acc-table td { background: #f0f5fa;}
+  .resource-title { margin-top: 26px; color: #004080; font-size: 1.13em; font-weight: bold;}
+  .resource-list { padding-left: 20px;}
+  .resource-list li { margin-bottom: 7px;}
+  .resource-list a { color: #004080; text-decoration: none;}
+  .resource-list a:hover { text-decoration: underline;}
+  footer { background: #00264d; color: white; padding: 19px; text-align: center; margin-top: 45px;}
+  footer a { color: #87bfff; text-decoration: none; margin: 0 10px;}
+  footer a:hover { text-decoration: underline;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Institute<span style="color:#87bfff;font-weight:bold;">Insight</span></div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="blog.html">Blog</a>
+    <a href="scholarship.html">Scholarships</a>
+    <a href="rankings.html">Rankings</a>
+    <a href="country-index.html">Countries & Regions</a>
+    <a href="analytics.html">Analytics</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Harvard University</h1>
+  <div class="profile-section">
+    <strong>About Harvard University:</strong>
+    <p>Founded in 1636, Harvard University in Cambridge, Massachusetts, is the oldest institution of higher education in the United States and one of the world’s top-ranked research universities, renowned for academic excellence, research, and innovation across disciplines.</p>
+  </div>
+
+  <table class="facts-table">
+    <tr><th>Established</th><td>1636</td></tr>
+    <tr><th>Location</th><td>Cambridge, Massachusetts, USA</td></tr>
+    <tr><th>Type</th><td>Private Research University</td></tr>
+    <tr><th>Students</th><td>~23,700 (approx. 7,100 undergrad, 16,600 grad)</td></tr>
+    <tr><th>Campus Size</th><td>5,076 acres (multiple campuses)</td></tr>
+    <tr><th>Contact</th><td><a href="https://www.harvard.edu/" target="_blank">harvard.edu</a>, <a href="mailto:college@fas.harvard.edu">college@fas.harvard.edu</a></td></tr>
+  </table>
+
+  <div class="section-title">Programs Offered</div>
+  <ul class="info-list">
+    <li><b>Undergraduate:</b> Liberal Arts, Sciences, Engineering, Social Sciences, Humanities, Business, Education</li>
+    <li><b>Graduate:</b> MA, MSc, MBA, JD, MD, EdD, PhD, master's and doctoral programs in all disciplines</li>
+    <li>Schools: Harvard College, Graduate School of Arts and Sciences, Business, Law, Medicine, Education, Public Health, Government, and more</li>
+  </ul>
+
+  <div class="section-title">Admission & Entry Requirements</div>
+  <ul class="info-list">
+    <li>Undergraduate: Application via Common App or Coalition App</li>
+    <li>Standardized tests: SAT/ACT (test-optional for most years), TOEFL/IELTS for international students</li>
+    <li>Academic performance, essays, recommendations, extracurriculars evaluated holistically</li>
+    <li>Graduate: GRE/GMAT/LSAT/MCAT for many programs, online application, interviews</li>
+    <li>International: Academic credential evaluation, English test scores, financial forms</li>
+  </ul>
+
+  <div class="section-title">Recent Rankings (Sample)</div>
+  <table class="rank-table">
+    <tr>
+      <th>Year</th>
+      <th>QS World</th>
+      <th>THE World</th>
+      <th>US News</th>
+    </tr>
+    <tr><td>2025</td><td>4</td><td>3</td><td>1</td></tr>
+    <tr><td>2024</td><td>4</td><td>2</td><td>1</td></tr>
+    <tr><td>2023</td><td>5</td><td>2</td><td>1</td></tr>
+    <tr><td>2022</td><td>2</td><td>2</td><td>2</td></tr>
+  </table>
+
+  <div class="section-title">Campus, Accommodation & Facilities</div>
+  <table class="acc-table">
+    <tr><th>Type</th><th>Description</th></tr>
+    <tr>
+      <td>Harvard Houses and Dorms</td>
+      <td>All undergrads reside in Harvard Yard dorms or one of 12 residential houses; on-campus grad housing also available</td>
+    </tr>
+    <tr>
+      <td>PG/Off-campus</td>
+      <td>Rentals available in Cambridge, Boston, and surrounding areas</td>
+    </tr>
+    <tr>
+      <td>Clubs, Dining, Recreation</td>
+      <td>Gifted dining halls, 400+ student organizations/clubs, athletic facilities, libraries, museums</td>
+    </tr>
+    <tr>
+      <td>International Student Support</td>
+      <td>Harvard International Office provides visa, onboarding, support, community events</td>
+    </tr>
+  </table>
+
+  <div class="section-title">Scholarships & Financial Aid</div>
+  <ul class="info-list">
+    <li>Generous need-based scholarships for both U.S. and international students</li>
+    <li>Graduate fellowships, teaching/research assistantships; external awards</li>
+    <li>Special financial aid for low-income, first-gen, underrepresented, and international students</li>
+    <li><a href="scholarship.html">InstituteInsight Scholarships</a></li>
+  </ul>
+
+  <div class="section-title">Student Life & Tips</div>
+  <ul class="info-list">
+    <li>Dynamic campus life, traditions (Harvard-Yale Game, Housing Day, etc.)</li>
+    <li>Strong alumni community, innovation and leadership focus</li>
+    <li>Prime location in Boston/Cambridge for research, startup ecosystem, culture</li>
+    <li>Safe, supportive, highly diverse student environment</li>
+  </ul>
+
+  <div class="resource-title">Featured Resources & Links</div>
+  <ul class="resource-list">
+    <li><a href="https://www.harvard.edu/">Official Harvard Website</a></li>
+    <li><a href="https://college.harvard.edu/admissions">Undergraduate Admissions</a></li>
+    <li><a href="https://gsas.harvard.edu/admissions">Graduate Admissions</a></li>
+    <li><a href="https://www.hio.harvard.edu/">International Office</a></li>
+    <li><a href="scholarship.html">InstituteInsight Scholarships</a></li>
+  </ul>
+</main>
+
+<footer>
+  <p>
+    Quick Links:
+    <a href="index.html">Home</a> |
+    <a href="dashboard.html">Dashboard</a> |
+    <a href="blog.html">Blog</a> |
+    <a href="scholarship.html">Scholarships</a> |
+    <a href="rankings.html">Rankings</a> |
+    <a href="country-index.html">Countries & Regions</a> |
+    <a href="analytics.html">Analytics</a> |
+    <a href="contact.html">Contact Us</a>
+  </p>
+  <p>© 2025 InstituteInsight. All rights reserved.</p>
+</footer>
+</body>
+</html>
