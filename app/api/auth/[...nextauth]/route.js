@@ -1,24 +1,24 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import dbConnect from "@/lib/dbConnect";
+import { dbConnect } from "@/lib/dbConnect";
 import User from "@/models/User";
 import bcrypt from "bcryptjs";
 
-const handler = NextAuth({
+export const authOptions = {
+  session: {
+    strategy: "jwt",
+  },
+
   providers: [
     CredentialsProvider({
       name: "Credentials",
       credentials: {
-        name: { label: "Name", type: "text" },
-        email: { label: "Email", type: "email" },
-        password: { label: "Password", type: "password" }
+        email: {},
+        password: {},
       },
+
       async authorize(credentials) {
         await dbConnect();
-        
-        if (!credentials?.email || !credentials?.password) {
-          throw new Error("Email and password are required");
-        }
 
         const user = await User.findOne({ email: credentials.email });
 
@@ -26,18 +26,29 @@ const handler = NextAuth({
           throw new Error("User not found");
         }
 
-        const isValid = await bcrypt.compare(credentials.password, user.password);
+        const validPassword = await bcrypt.compare(
+          credentials.password,
+          user.password
+        );
 
-        if (!isValid) {
-          throw new Error("Invalid password");
+        if (!validPassword) {
+          throw new Error("Incorrect password");
         }
 
-        return {
-          id: user._id,
-          name: user.name,
-          email: user.email,
-        };
-      }
+        return { id: user._id, email: user.email };
+      },
+    }),
+  ],
+
+  pages: {
+    signIn: "/login",
+  },
+};
+
+const handler = NextAuth(authOptions);
+
+export { handler as GET, handler as POST };
+
     })
   ],
   session: {
