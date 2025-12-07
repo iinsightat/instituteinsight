@@ -1,6 +1,6 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { dbConnect } from "@/lib/dbConnect";
+import connectDB from "@/lib/mongodb";
 import User from "@/models/User";
 import bcrypt from "bcryptjs";
 
@@ -18,7 +18,8 @@ export const authOptions = {
       },
 
       async authorize(credentials) {
-        await dbConnect();
+        // Connect to MongoDB
+        await connectDB();
 
         const user = await User.findOne({ email: credentials.email });
 
@@ -43,18 +44,10 @@ export const authOptions = {
   pages: {
     signIn: "/login",
   },
+
+  secret: process.env.NEXTAUTH_SECRET,
 };
 
 const handler = NextAuth(authOptions);
-
-export { handler as GET, handler as POST };
-
-    })
-  ],
-  session: {
-    strategy: "jwt",
-  },
-  secret: process.env.NEXTAUTH_SECRET,
-});
 
 export { handler as GET, handler as POST };
