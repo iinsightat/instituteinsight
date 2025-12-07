@@ -1,20 +1,52 @@
 "use client";
 
 import { signIn } from "next-auth/react";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
-  return (
-    <div className="flex items-center justify-center min-h-screen px-6">
-      <div className="bg-white shadow-md rounded-xl p-8 max-w-sm w-full">
-        <h1 className="text-2xl font-bold mb-4 text-center">Login</h1>
+  const router = useRouter();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
-        <button
-          onClick={() => signIn("google")}
-          className="w-full bg-blue-600 text-white py-2 rounded-lg text-center hover:bg-blue-700 transition"
-        >
-          Login with Google
-        </button>
-      </div>
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    const res = await signIn("credentials", {
+      email,
+      password,
+      redirect: false,
+    });
+
+    if (res.error) {
+      setError(res.error);
+    } else {
+      router.push("/");
+    }
+  };
+
+  return (
+    <div style={{ width: "300px", margin: "auto", paddingTop: "100px" }}>
+      <h2>Login</h2>
+
+      <form onSubmit={handleLogin}>
+        <input
+          type="email"
+          placeholder="Email"
+          onChange={(e) => setEmail(e.target.value)}
+        />
+
+        <input
+          type="password"
+          placeholder="Password"
+          onChange={(e) => setPassword(e.target.value)}
+        />
+
+        <button type="submit">Login</button>
+      </form>
+
+      {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
   );
 }
